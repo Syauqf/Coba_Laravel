@@ -26,6 +26,6 @@
 								@endsection
 								
 							
-							
+							LATIP KONTOL
 							
 				
