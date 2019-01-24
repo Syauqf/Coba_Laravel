@@ -1,26 +1,18 @@
-
-							<table border='1' >
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Address</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-								<tbody>
+								@extends('home')
+								@section('isi')
 									<?php foreach ($Customer as $customer): ?>
 									<tr>
 										<td width="150">
-											<?php echo $customer->name ?>
+											<?php echo $customer->Customer_name ?>
 										</td>
 										<td>
-											<?php echo $customer->addres ?>
+											<?php echo $customer->Customer_address ?>
 										</td>
 										<td>
-										<a href="http://localhost:8000/Customer/{{$customer->customer_id}}/edit"><button >Edit</button></a>
+										<a href="http://localhost:8000/Customer/{{$customer->Customer_id}}/edit"><button >Edit</button></a>
 										</td>
 										<td>
-										<form method="POST" action="{{ route('Customer.update', $customer->customer_id) }}">
+										<form method="POST" action="{{ route('Customer.update', $customer->Customer_id) }}">
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 										<input type="submit" name="delete" id="delete" value="hapus"/>
@@ -28,8 +20,12 @@
 										</td>
 									</tr>
 									<?php endforeach; ?>
-
-								</tbody>
-							</table>
-							<a href="http://localhost:8000/Customer/create"><button >Tambah</button></a>
-						
+								@endsection
+								@section('tambah')
+								<a href="http://localhost:8000/Customer/create"><button >Tambah</button></a>
+								@endsection
+								
+							
+							
+							
+				

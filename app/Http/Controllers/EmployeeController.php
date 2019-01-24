@@ -7,7 +7,7 @@ class EmployeeController extends Controller
     function index()
     {
         $Employee = Employee::get(['employee_id','employee_name','employee_address','employee_phone_number']);
-        return view('Employee.Index',compact('Employee'));
+        return view('Home',compact('Employee'));
     }
     function create(Request $request)
     {

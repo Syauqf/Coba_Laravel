@@ -10,7 +10,7 @@ class CustomerController extends Controller
 
     function index()
     {
-        $Customer = Customer::get(['customer_id','name','addres']);
+        $Customer = Customer::get(['Customer_id','Customer_name','Customer_address']);
         return view('Customer.Index',compact('Customer'));
     }
     function create(Request $request)
@@ -25,8 +25,8 @@ class CustomerController extends Controller
 
        Customer::create ([ 
 
-        'name' => $Iname,
-        'addres' => $Iaddres
+        'Customer_name' => $Iname,
+        'Customer_address' => $Iaddres
        ]);
 
        return redirect ('\Customer');
@@ -52,8 +52,8 @@ class CustomerController extends Controller
         $Iaddres = $request->input("txt_addres");
         Customer::where('Customer_id',$id)->update([ 
 
-            'name' => $Iname,
-            'addres' => $Iaddres
+            'Customer_name' => $Iname,
+            'Customer_address' => $Iaddres
            ]);
 
            return redirect ('\Customer');   

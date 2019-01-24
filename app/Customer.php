@@ -7,9 +7,9 @@ class Customer extends Model
     protected $table = "customer";
     public $timestamps = false;
     protected $fillable = [
-    'customer_id',
-    'name',
-    'addres'
+    'Customer_id',
+    'Customer_name',
+    'Customer_address'
     ];
 
 }

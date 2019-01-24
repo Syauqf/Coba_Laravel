@@ -6,8 +6,8 @@ class SupplierController extends Controller
 {
     function index()
     {
-        $Supplier = SupplierModel::get(['Supplier_id','Supplier_name','Supplier_address']);
-        return view('Supplier.Index',compact('Supplier'));
+        $Data = SupplierModel::get(['Supplier_id','Supplier_name','Supplier_address']);
+        return view('Home',compact('Supplier'));
     }
     function create(Request $request)
     {
@@ -25,16 +25,16 @@ class SupplierController extends Controller
     }
     public function show($id)
     {
-        $Supplier = SupplierModel::where('Supplier_id',$id)->get();
+        $Data = SupplierModel::where('Supplier_id',$id)->get();
 
-        return view('Supplier.Index',compact('Supplier'));
+        return view('Supplier.Index',compact('Data'));
     }
 
     public function edit($id)
     {
-        $Supplier = SupplierModel::where('Supplier_id',$id)->get();
+        $Data = SupplierModel::where('Supplier_id',$id)->get();
 
-        return view('Supplier.Edit',compact('Supplier'));
+        return view('Supplier.Edit',compact('Data'));
     }
 
     public function update(Request $request, $id)

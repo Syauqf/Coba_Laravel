@@ -17,4 +17,4 @@ Route::get('/', function () {
 Route::resource('Customer','CustomerController');
 Route::resource('Supplier','SupplierController');
 Route::resource('Employee','EmployeeController');
-Route::get('/Layout','LayoutController@index');
+Route::resource('Layout','LayoutController');
